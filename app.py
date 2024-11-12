@@ -5,7 +5,7 @@ from datetime import datetime
 app = Flask(__name__)
 
 def get_db_connection():
-    conn = sqlite3.connect('supermercadoFinal.db')  # Asegúrate de que este es el nombre correcto de tu base de datos
+    conn = sqlite3.connect('/home/lksw/Super/supermercadoFinal.db')  # Asegúrate de que esta es la ruta correcta a tu base de datos en PythonAnywhere
     conn.row_factory = sqlite3.Row
     return conn
 
