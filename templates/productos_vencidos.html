@@ -29,38 +29,40 @@
     </nav>
     <div class="container mt-5">
         <h1 class="mb-4">Productos Vencidos</h1>
-        <table class="table table-bordered table-striped">
-            <thead class="thead-dark">
-                <tr>
-                    <th>Código</th>
-                    <th>Nombre</th>
-                    <th>Descripción</th>
-                    <th>Stock</th>
-                    <th>Precio Unitario</th>
-                    <th>Fecha Vencimiento</th>
-                    <th>Tipo</th>
-                    <th>Descuento</th>
-                    <th>Cantidad Vendida</th>
-                    <th>Tiene Descuento</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for producto in productos %}
-                <tr>
-                    <td>{{ producto.codigo }}</td>
-                    <td>{{ producto.nombre }}</td>
-                    <td>{{ producto.descripcion }}</td>
-                    <td>{{ producto.stock }}</td>
-                    <td>{{ producto.precio_unitario }}</td>
-                    <td>{{ producto.fecha_vencimiento.strftime('%d/%m/%Y') if producto.fecha_vencimiento else '' }}</td>
-                    <td>{{ producto.tipo }}</td>
-                    <td>{{ producto.descuento }}</td>
-                    <td>{{ producto.cantidad_vendida }}</td>
-                    <td>{{ producto.tiene_descuento }}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Código</th>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>Stock</th>
+                        <th>Precio Unitario</th>
+                        <th>Fecha Vencimiento</th>
+                        <th>Tipo</th>
+                        <th>Descuento</th>
+                        <th>Cantidad Vendida</th>
+                        <th>Tiene Descuento</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for producto in productos %}
+                    <tr>
+                        <td>{{ producto.codigo }}</td>
+                        <td>{{ producto.nombre }}</td>
+                        <td>{{ producto.descripcion }}</td>
+                        <td>{{ producto.stock }}</td>
+                        <td>{{ producto.precio_unitario }}</td>
+                        <td>{{ producto.fecha_vencimiento.strftime('%d/%m/%Y') if producto.fecha_vencimiento else '' }}</td>
+                        <td>{{ producto.tipo }}</td>
+                        <td>{{ producto.descuento }}</td>
+                        <td>{{ producto.cantidad_vendida }}</td>
+                        <td>{{ producto.tiene_descuento }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
     </div>
     <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
